@@ -1,0 +1,69 @@
+:root {
+  --primary:#4a90e2; --secondary:#9013fe; --bg:#f7f8fb; --text:#333; --card:#fff;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:Poppins, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+
+.hero { position:relative; min-height:74vh; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+#tsparticles { position:absolute; inset:0; }
+.hero-inner { position:relative; z-index:2; text-align:center; padding:20px; color:#fff; }
+.avatar { width:96px; height:96px; border-radius:50%; object-fit:cover; margin-bottom:10px; border:3px solid rgba(255,255,255,.8); }
+.brand h1 { margin:6px 0; font-size:2.6rem; }
+.tagline { margin:4px 0; font-size:1.1rem; opacity:.95; }
+.metrics { font-size:.95rem; opacity:.9; }
+.hero-actions { display:flex; gap:12px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
+.btn { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600; transition:.2s; }
+.btn-primary { background:#fff; color:var(--primary); }
+.btn-outline { border:2px solid #fff; color:#fff; }
+.btn:hover { transform:translateY(-2px); }
+
+.theme-toggle { position:absolute; right:16px; bottom:16px; background:rgba(255,255,255,.2); color:#fff; border:none; padding:10px; border-radius:999px; cursor:pointer; backdrop-filter:blur(6px); }
+.theme-toggle:hover { background:rgba(255,255,255,.35); }
+
+.nav { background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.06); position:sticky; top:0; z-index:10; }
+.nav .wrap { max-width:1100px; margin:auto; display:flex; gap:20px; padding:12px 20px; justify-content:center; flex-wrap:wrap; }
+.nav a { color:var(--primary); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:8px; transition:.2s; }
+.nav a:hover { color:var(--secondary); background:#f0f6ff; }
+
+.section { max-width:1100px; margin:auto; padding:60px 20px; }
+h2 { text-align:center; color:var(--primary); margin-bottom:10px; }
+.sub { text-align:center; color:#666; margin-bottom:24px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+.card { background:var(--card); border-radius:14px; box-shadow:var(--shadow); padding:22px; transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform:translateY(-6px); box-shadow:0 14px 30px rgba(0,0,0,.12); }
+
+.badges { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; }
+.badge { display:inline-block; background:#eef5ff; color:var(--primary); padding:6px 10px; border-radius:999px; font-size:.9rem; }
+
+.list { padding-left:18px; margin:10px 0 0; }
+.list li { margin:6px 0; }
+
+.timeline { position:relative; display:grid; gap:24px; }
+.tl-item { position:relative; display:grid; grid-template-columns:24px 1fr; gap:12px; align-items:flex-start; }
+.tl-dot { width:14px; height:14px; border-radius:50%; background:var(--secondary); margin-top:8px; }
+.tl-card { background:#fff; border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+
+.skills-list { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+
+.card-project { perspective:1000px; cursor:pointer; }
+.card-project .card-front, .card-project .card-back {
+  backface-visibility:hidden; transition:transform .6s; border-radius:12px;
+}
+.card-project .card-front { }
+.card-project .card-back { transform:rotateY(180deg); }
+.card-project:hover .card-front { transform:rotateY(180deg); }
+.card-project:hover .card-back { transform:rotateY(0); }
+
+.form-row { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; }
+input, textarea { padding:10px; border-radius:10px; border:1px solid #dfe3eb; font-family:inherit; font-size:1rem; }
+input:focus, textarea:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(74,144,226,.15); }
+
+.footer { text-align:center; padding:26px 20px; background:#f0f2f7; color:#555; }
+
+/* Dark theme */
+body.dark { --bg:#0f1320; --text:#e6e7eb; --card:#151a2d; --shadow:none; }
+body.dark .nav { background:#151a2d; box-shadow:none; }
+body.dark .nav a:hover { background:#182035; }
+body.dark .badge { background:#1b2340; color:#a7c7ff; }
+body.dark .footer { background:#151a2d; color:#a9afc6; }
